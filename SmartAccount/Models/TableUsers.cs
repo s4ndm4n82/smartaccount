@@ -42,5 +42,8 @@ namespace SmartAccount.Models
 
         [Required]
         public bool Banned { get; set; }
+
+        [Required]
+        public Guid CstSecId { get; set; }
     }
 }

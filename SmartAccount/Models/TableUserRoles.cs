@@ -10,7 +10,7 @@ namespace SmartAccount.Models
 
         [Required]
         [MaxLength(50)]
-        public string RoldeName { get; set; }
+        public string RoleName { get; set; }
 
         [Required]
         public JsonDocument RoleAcess { get; set; }
