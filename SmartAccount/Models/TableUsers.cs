@@ -40,21 +40,27 @@ namespace SmartAccount.Models
         public Guid UserRole { get; set; }        
 
         [Required]
+        [Column ("cstviewid")]
         public Guid CstViewId { get; set; }
 
         [Required]
+        [Column ("subviewid")]
         public JsonDocument UserSettings { get; set; }
 
         [Required]
+        [Column ("usrglobal")]
         public bool UsrGlobal { get; set; }
 
         [Required]
+        [Column ("banned")]
         public bool Banned { get; set; }
 
         [Required]
+        [Column ("usercreationdate")]
         public DateTime UserCreationDate { get; set; }
 
         [Required]
+        [Column ("usermodifydate")]
         public DateTime UserModifyDate { get; set; }        
     }
 }
