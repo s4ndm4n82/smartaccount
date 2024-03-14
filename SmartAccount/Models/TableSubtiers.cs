@@ -18,12 +18,12 @@ namespace SmartAccount.Models
         public int TierUserCount { get; set; }
 
         [Required]
+        public bool TierActive { get; set; }
+
+        [Required]
         public DateTime TierCreateDate { get; set; }
 
         [Required]
-        public DateTime TierModifiedDate { get; set; }
-
-        [Required]
-        public  bool TierActive { get; set; }
+        public DateTime TierModifiedDate { get; set; }        
     }
 }

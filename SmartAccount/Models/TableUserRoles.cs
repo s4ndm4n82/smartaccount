@@ -5,6 +5,7 @@ namespace SmartAccount.Models
 {
     public class TableUserRoles
     {
+        // The user roles table need to have needed roles.
         [Key]
         public Guid Id { get; set; }
 

@@ -23,6 +23,10 @@ namespace SmartAccount.Models
         public string ZipCode { get; set; }
 
         [Required]
+        [MaxLength(50)]
+        public string City { get; set; }
+
+        [Required]
         [MaxLength(2)]
         public string Country { get; set; }
 
@@ -41,6 +45,12 @@ namespace SmartAccount.Models
 
         [Required]
         public Guid SubType { get; set; }
+
+        [Required]
+        public bool CstGlobal { get; set; }
+
+        [Required]
+        public bool Active { get; set; }
 
         [Required]
         public DateTime ClientCreatedDate { get; set; }
