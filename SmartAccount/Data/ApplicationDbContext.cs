@@ -7,30 +7,15 @@ namespace SmartAccount.Data
 {
     public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
     {
+        // User Table
         public DbSet<TableUsers> TableUsers { get; set; }
+        // Security Table
         public DbSet<TableUserSecurity> TableUsersSecurity { get; set; }
+        // User Roles Table
         public DbSet<TableUserRoles> TableUserRoles { get; set; }
+        // Customer Details Table
         public DbSet<TableCstDetails> TableCstDetails { get; set; }
+        // Subscription Tier Table
         public DbSet<TableSubtiers> TableSubtiers { get; set; }
-    }
-
-    public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
-    {
-        public ApplicationDbContext CreateDbContext(string[] args)
-        {
-            // Build configuration
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
-
-            // Create options builder using the configuration from the appsettings.json file
-            DbContextOptionsBuilder<ApplicationDbContext> builder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            string connectionString = configuration.GetConnectionString("DefaultConnection");
-            builder.UseSqlServer(connectionString);
-
-            // Create and return a new instance of the ApplicationDbContext
-            return new ApplicationDbContext(builder.Options);
-        }
     }
 }
